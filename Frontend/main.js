@@ -2,8 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const point1 = "1"
   console.log(point1);
   async function getRandomMessage() {
-    const responseAPI = await fetch("https://rakhiresumefunction.azurewebsites.net/api/HttpTrigger1?");
+    //const responseAPI = await fetch("https://rakhiresumefunction.azurewebsites.net/api/HttpTrigger1?");
     //const responseAPI = await fetch("http://localhost:8080/api/HttpTrigger1", { mode: "no-cors" });
+    const responseAPI = await( await fetch(`/api/HttpTrigger1`));
     const data = await responseAPI.text();
     console.log(responseAPI);
     //const point2 = "2"
