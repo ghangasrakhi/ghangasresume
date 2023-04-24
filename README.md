@@ -61,7 +61,8 @@ If you don't already have Node.js and NPM installed on your machine, you can dow
 
 >**npm install**
 
-### 4. Run the website
+### 4. Run the website 
+>**npm start**
 
 ### 5. Explore the website:
 Once the website is open, you can explore the different pages by clicking on the links in the navigation bar. You can also test out the API by clicking on the "Want to know a fun fact?" button.
