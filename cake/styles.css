@@ -1,0 +1,126 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('bg-3.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.controls input, .controls button {
+    margin-bottom: 10px;
+}
+.bg-options {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.bg-option {
+    margin-bottom: 5px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid #000;
+    border-radius: 5px;
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    object-fit: cover;
+}
+.card {
+    width: 400px;
+    height: 600px;
+    perspective: 1000px;
+}
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000;
+    background-color: rgba(247, 240, 240, 0.721);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.card-front {
+    background-image: url('front.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.card-back {
+    background-image: url('back.jpg');
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+}
+#cake-container {
+    position: relative;
+    width: 200px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top: 20px;
+}
+#cake {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.candle {
+    position: absolute;
+    top: -2px;
+    width: 10px;
+    height: 50px;
+    bottom: 100px;
+    background-color: #ff9999;
+    border-radius: 10px;
+    transform: translateX(-50%);
+}
+.flame {
+    position: absolute;
+    top: -15px;
+    left: -5px;
+    width: 20px;
+    height: 20px;
+    background-color: #ff0;
+    border-radius: 50%;
+    animation: flicker 0.2s infinite alternate;
+}
+.blown-out {
+    background-color: transparent !important;
+}
+@keyframes flicker {
+    0% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+#message-container {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}

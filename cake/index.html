@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Card with Candles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="controls">
+        <input type="number" id="numCandles" placeholder="Enter number of candles">
+        <input type="text" id="customMessage" placeholder="Enter your message">
+        <button onclick="addCandles()">Go Ahead</button>
+    </div>
+    <div class="bg-options">
+        <img class="bg-option" data-image="download-1.jpg" src="download-1.jpg" alt="Background 1">
+        <img class="bg-option" data-image="download-2.jpg" src="download-2.jpg" alt="Background 2">
+        <img class="bg-option" data-image="download-3.jpg" src="download-3.jpg" alt="Background 3">
+        <img class="bg-option" data-image="download-4.jpg" src="download-4.jpg" alt="Background 4">
+        <img class="bg-option" data-image="download-5.jpg" src="download-5.jpg" alt="Background 5">
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>Happy Birthday!</h2>
+                <p>Open the card to see the cake!</p>
+            </div>
+            <div class="card-back">
+                <div id="cake-container">
+                    <img id="cake" src="cake.jpg" alt="Cake">
+                </div>
+                <div id="message-container"></div>
+            </div>
+        </div>
+    </div>
+    <script src="cake.js"></script>
+</body>
+</html>
