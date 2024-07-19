@@ -16,6 +16,22 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
+
+.fancy-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #3498db; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for border color */
+}
+
+.fancy-input:focus {
+    outline: none;
+    border-color: #e74c3c; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.8); /* Add shadow on focus */
+}
+
 .controls input, .controls button {
     margin-bottom: 10px;
 }
@@ -190,7 +206,13 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none; /* Allow clicks through balloons */
+    z-index: 998; /* Ensure it's below the bulbs */
+    border: 20px solid transparent;
+    border-image-source: url('Balloon-Border.png'); /* Replace with your border image */
+    border-image-slice: 40; /* Adjust as needed */
+    border-image-repeat: round; /* Ensure the border image repeats around */
 }
+
 
 .balloon {
     width: 50px; /* Adjust size as needed */

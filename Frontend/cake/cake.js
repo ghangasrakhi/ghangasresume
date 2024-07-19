@@ -123,6 +123,10 @@ function showLights() {
 
 }
 
+// function playHiddenAudio() {
+//     const hiddenAudio = document.getElementById('hiddenAudio');
+//     hiddenAudio.play();
+// }
 
 
 
@@ -150,9 +154,15 @@ function flyBalloons() {
 
     // Append balloon container to body
     body.appendChild(balloonContainer);
+    
+    // Play hidden audio
+    const hiddenAudio = document.getElementById('hiddenAudio');
+    hiddenAudio.play();
 
     // Animate balloons
     animateBalloons(balloonContainer);
+
+    
 }
 
 function animateBalloons(container) {

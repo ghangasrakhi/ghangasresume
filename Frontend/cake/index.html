@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="controls">
-        <input type="number" id="numCandles" placeholder="Enter number of candles">
-        <input type="text" id="customMessage" placeholder="Enter your message">
+        <input type="number" id="numCandles" placeholder="Enter number of candles" class="fancy-input">
+        <input type="text" id="customMessage" placeholder="Enter your message" class="fancy-input">
         <button onclick="addCandles()">Go Ahead</button>
     </div>
     <div class="bg-options">
@@ -37,6 +37,14 @@
     <button class="fancy-button" onclick="showLights()">Want lights???</button>
     <!-- <button class="fancy-button" onclick="flyBalloons()">Balloons Time!</button> -->
     <button class="balloon-button" style="display: none;">Balloons!</button>
+    <!-- <button onclick="playHiddenAudio()">Play Audio</button> -->
+
+    <!-- Hidden audio element -->
+    <audio id="hiddenAudio">
+        <source src="hbd.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
 
     <script src="cake.js"></script>
 </body>
