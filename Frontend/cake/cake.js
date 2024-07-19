@@ -85,6 +85,89 @@ function changeBackground(image) {
     cardBack.style.backgroundImage = `url(${image})`;
 }
 
+function showLights() {
+    const body = document.body;
+
+    // Hide the "Want lights???" button
+    const lightsButton = document.querySelector('.fancy-button');
+    lightsButton.style.display = 'none';
+
+    const bulbContainer = document.createElement('div');
+    bulbContainer.className = 'bulb-container';
+
+    const colors = ['red', 'blue', 'green', 'yellow', 'white', 'orange', 'pink'];
+    const spacing = 180; // Adjust spacing between bulbs
+
+    // Change background color to white
+    body.style.backgroundColor = '#ffffff';
+
+    // Create bulbs and position them
+    colors.forEach((color, index) => {
+        const bulb = document.createElement('img');
+        bulb.src = `bulb_${color}.png`;
+        bulb.className = 'bulb';
+        bulb.style.width = '50px'; // Adjust size as needed
+        bulb.style.position = 'absolute';
+        bulb.style.left = `${index * spacing}px`; // Position each bulb horizontally
+        bulbContainer.appendChild(bulb);
+    });
+
+    // Append bulb container to body
+    body.appendChild(bulbContainer);
+
+    body.style.backgroundColor = '#ffffff';
+    // Show the "Balloons!" button
+    const balloonsButton = document.querySelector('.balloon-button');
+    balloonsButton.style.display = 'block';
+
+
+}
+
+
+
+
+function flyBalloons() {
+    const body = document.body;
+
+    // Create a container for balloons
+    const balloonContainer = document.createElement('div');
+    balloonContainer.className = 'balloon-container';
+
+    // Create and position balloons randomly
+    const numBalloons = 10;
+    for (let i = 1; i <= numBalloons; i++) {
+        const balloon = document.createElement('img');
+        balloon.src = `b${i}.png`;
+        balloon.className = 'balloon';
+        balloon.style.width = '50px'; // Adjust size as needed
+        balloon.style.position = 'absolute';
+        balloon.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+        balloon.style.top = `${Math.random() * 100}vh`; // Random vertical position
+
+        // Add balloon to container
+        balloonContainer.appendChild(balloon);
+    }
+
+    // Append balloon container to body
+    body.appendChild(balloonContainer);
+
+    // Animate balloons
+    animateBalloons(balloonContainer);
+}
+
+function animateBalloons(container) {
+    const balloons = container.querySelectorAll('.balloon');
+    balloons.forEach(balloon => {
+        // Random animation properties
+        const animationDuration = `${Math.random() * 10 + 5}s`; // Random duration between 5s to 15s
+        const randomAngle = `${Math.random() * 360}deg`; // Random rotation angle
+
+        balloon.style.animation = `floatAnimation ${animationDuration} linear infinite`;
+        balloon.style.transform = `rotate(${randomAngle})`;
+    });
+}
+
+
 // Initialize microphone and start listening after user interaction
 window.addEventListener('click', () => {
     setupMic();
@@ -97,4 +180,10 @@ document.addEventListener('DOMContentLoaded', () => {
             changeBackground(imageUrl);
         });
     });
+    const lightsButton = document.querySelector('.fancy-button');
+    lightsButton.addEventListener('click', showLights);
+
+    // Event listener for "Balloons!" button click
+    const balloonsButton = document.querySelector('.balloon-button');
+    balloonsButton.addEventListener('click', flyBalloons);
 });

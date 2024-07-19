@@ -3,9 +3,8 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url('bg-3.jpg');
-    background-size: cover;
-    background-position: center;
+    background-color: #000; /* Set background color to black */
+    transition: background-color 0.5s ease;
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -124,3 +123,89 @@ body {
     text-align: center;
     color: #333;
 }
+.fancy-button {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    font-size: 24px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 9999;
+}
+.balloon-button {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    font-size: 24px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 9999;
+}
+.bulb-container {
+    position: fixed;
+    top: 1%; /* Adjust top position as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Full width */
+    height: 30vh; /* 30% of viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure it's above other content */
+}
+
+.bulb {
+    width: 50px; /* Adjust size as needed */
+    position: absolute;
+    top: 0;
+    left: calc(50% + (var(--index) * 48%)); /* Adjust spacing between bulbs */
+    animation: descend 3s forwards; /* Animation to descend */
+}
+
+@keyframes descend {
+    0% {
+        top: -100px; /* Start position above the viewport */
+        opacity: 0; /* Initially invisible */
+    }
+    100% {
+        top: 0; /* End position at the top of the bulb container */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+.balloon-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks through balloons */
+}
+
+.balloon {
+    width: 50px; /* Adjust size as needed */
+    position: absolute;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-100vh) rotate(180deg);
+    }
+    100% {
+        transform: translateY(0) rotate(360deg);
+    }
+}
+
