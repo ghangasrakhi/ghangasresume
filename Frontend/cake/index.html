@@ -3,49 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Card with Candles</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>The Man. The Myth. The Legend.</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            text-align: center;
+            overflow-x: hidden; /* Prevents scrollbars when button flies */
+        }
+        header {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 60px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: -40px auto 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 3em; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .stat-card {
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+        .stat-card h3 { color: #ff6b6b; margin-top: 0; }
+        .love-note {
+            font-style: italic;
+            font-size: 1.2em;
+            color: #555;
+            margin: 40px 0;
+            line-height: 1.6;
+        }
+        
+        /* Prank Section Styles */
+        .prank-section {
+            margin: 40px 0;
+            padding: 20px;
+            border-top: 2px dashed #ff6b6b;
+        }
+        .btn-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            height: 60px; /* Space for buttons */
+        }
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.1s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #noBtn {
+            background-color: #ff4d4d;
+            color: white;
+            position: relative;
+            z-index: 999;
+        }
+
+        footer { padding: 20px; font-size: 0.8em; color: #888; }
+    </style>
 </head>
 <body>
-    <div class="controls">
-        <input type="number" id="numCandles" placeholder="Enter number of candles" class="fancy-input">
-        <input type="text" id="customMessage" placeholder="Enter your message" class="fancy-input">
-        <button onclick="addCandles()">Go Ahead</button>
-    </div>
-    <div class="bg-options">
-        <img class="bg-option" data-image="download-1.jpg" src="download-1.jpg" alt="Background 1">
-        <img class="bg-option" data-image="download-2.jpg" src="download-2.jpg" alt="Background 2">
-        <img class="bg-option" data-image="download-3.jpg" src="download-3.jpg" alt="Background 3">
-        <img class="bg-option" data-image="download-4.jpg" src="download-4.jpg" alt="Background 4">
-        <img class="bg-option" data-image="download-5.jpg" src="download-5.jpg" alt="Background 5">
-    </div>
-    <div class="card">
-        <div class="card-inner">
-            <div class="card-front">
-                <h2>Happy Birthday!</h2>
-                <p>Open the card to see the cake!</p>
-            </div>
-            <div class="card-back">
-                <div id="cake-container">
-                    <img id="cake" src="cake.jpg" alt="Cake">
-                </div>
-                <div id="message-container"></div>
-            </div>
+
+<header>
+    <h1>The Official Utkarsh User Manual</h1>
+    <p>Version 2026.0 - High Performance Model</p>
+</header>
+
+<div class="container">
+    <h2>Performance Review: ★★★★★</h2>
+    <p>The subject continues to exceed expectations in the "Being Cute" and "Refusing to Ask for Directions" categories.</p>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>Spider Removal</h3>
+            <p>0% Success Rate<br><small>(Even the small ones)</small></p>
+        </div>
+        <div class="stat-card">
+            <h3>Joke Quality</h3>
+            <p>98% Dad Jokes<br><small>2% Actually Funny</small></p>
+        </div>
+        <div class="stat-card">
+            <h3>Selective Hearing</h3>
+            <p>Fully Operational<br><small>Optimized for bed time</small></p>
+        </div>
+        <div class="stat-card">
+            <h3>Cuddle Capacity</h3>
+            <p>Unlimited<br><small>Battery never dies</small></p>
         </div>
     </div>
-    <!-- Fancy button for lights -->
-    <button class="fancy-button" onclick="showLights()">Want lights???</button>
-    <!-- <button class="fancy-button" onclick="flyBalloons()">Balloons Time!</button> -->
-    <button class="balloon-button" style="display: none;">Balloons!</button>
-    <!-- <button onclick="playHiddenAudio()">Play Audio</button> -->
 
-    <!-- Hidden audio element -->
-    <audio id="hiddenAudio">
-        <source src="hbd.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    
+    <div class="love-note">
+        "To the man who knows exactly how I like my chai but still manages to leave his socks 2 inches away from the laundry basket—I love you more than chai"
+    </div>
 
-    <script src="cake.js"></script>
+    <div class="prank-section">
+        <h3>Critical System Question:</h3>
+        <p style="font-size: 1.5rem; font-weight: bold;">Do you love me?</p>
+        <div class="btn-wrapper">
+            <button id="yesBtn" class="btn" onclick="celebrate()">YES</button>
+            <button id="noBtn" class="btn" onmouseover="moveButton()" onclick="moveButton()">NO</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Property of His Favorite Person. No Refunds. No Exchanges.
+</footer>
+
+<script>
+    function moveButton() {
+        const btn = document.getElementById('noBtn');
+        // Random position logic
+        const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+        
+        btn.style.position = 'fixed';
+        btn.style.left = x + 'px';
+        btn.style.top = y + 'px';
+    }
+
+    function celebrate() {
+        alert("Correct choice, Boboo! ❤️ \n\nSystem reaching 100% happiness levels. \nNow come give your me a hug!");
+        document.querySelector('.prank-section h3').innerText = "System Status: Loved! 😍";
+        document.getElementById('noBtn').style.display = 'none';
+    }
+</script>
+
 </body>
 </html>
