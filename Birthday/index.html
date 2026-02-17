@@ -1,137 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Happy Birthday !!</title>
-	<meta charset="UTF-8" />
-	<meta name="description" content="Happy Birthday Sonangi">
-	<meta name="robots" content="index, follow" />
-    <meta name="keywords" content="Birthday, Happy">
-    <meta property="og:type" content="E-Greeting" />
-    <meta property="og:image" content="favicon.ico" />
-    <meta property="og:description" content="Wish you a very Happy Birthday">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="stylesheet.css">
-	<link rel="stylesheet" type="text/css" href="loading.css">
-	<link href='https://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
-	<!-- <link rel="stylesheet" href="compiled.css"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Man. The Myth. The Legend.</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            text-align: center;
+            overflow-x: hidden; /* Prevents scrollbars when button flies */
+        }
+        header {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 60px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: -40px auto 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 3em; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .stat-card {
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+        .stat-card h3 { color: #ff6b6b; margin-top: 0; }
+        .love-note {
+            font-style: italic;
+            font-size: 1.2em;
+            color: #555;
+            margin: 40px 0;
+            line-height: 1.6;
+        }
+        
+        /* Prank Section Styles */
+        .prank-section {
+            margin: 40px 0;
+            padding: 20px;
+            border-top: 2px dashed #ff6b6b;
+        }
+        .btn-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            height: 60px; /* Space for buttons */
+        }
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.1s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #noBtn {
+            background-color: #ff4d4d;
+            color: white;
+            position: relative;
+            z-index: 999;
+        }
+
+        footer { padding: 20px; font-size: 0.8em; color: #888; }
+    </style>
 </head>
-
 <body>
-	<div class="loading"></div>
-	<audio class="song" controls loop>
-        <source src="hbd.mp3"></source>
-	   Your browser isn't supported for this Audio!!.
-    </audio>
-    <div class="balloons text-center" id="b1">
-    	<h2 class="yellow">H</h2>
-    </div>
-    <div class="balloons text-center" id="b2">
-    	<h2 class="blue">B</h2>
-    </div>
-	<div class="balloons text-center" id="b3">
-    	<h2 class="red">D</h2>
-    </div>
-	<div class="balloons text-center" id="b4">
-    	<h2 class="green">R</h2>
-    </div>
-	<div class="balloons text-center" id="b5">
-    	<h2 class="purple">A</h2>
-    </div>
-    <div class="balloons text-center" id="b6">
-    	<h2 class="light-green">K</h2>
-    </div>
-    <div class="balloons text-center" id="b7">
-    	<h2 class="turquoise">H</h2>
-	</div>
-	<div class="balloons text-center" id="b8">
-    	<h2 class="red">I</h2>
-	</div>
-	<div class="balloons text-center" id="b9">
-    	<h2 class="yellow">!</h2>
-	</div>
 
-    <img src="Balloon-Border.png" width="100%" class="balloon-border">
-	<div class="container">
-		
-		<div class="row">
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_yellow"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_red"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_blue"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_green"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_pink"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_orange"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<img src="banner.png" class="bannar">
-			</div>
-		</div>
-		<div class="row cake-cover">
-			<div class="col-md-12 texr-center">
-				<div class="cake">
-				  <div class="velas">
-				    <div class="fuego"></div>
-				    <div class="fuego"></div>
-				    <div class="fuego"></div>
-				    <div class="fuego"></div>
-				    <div class="fuego"></div>
-				  </div>
-				  <div class="cobertura"></div>
-				  <div class="bizcocho"></div>
-				</div>
-			</div>
-		</div>
-		<div class="row message">
-			<div class="col-md-12">
-				<p>Happy</p>
-				<p>Birthday</p>
-				<p>Sachin!!!!</p>
-				<p>God</p>
-				<p>Bless</p>
-				<p><strong>You!!!!!!!!!!</strong></p>
-			</div>
-		</div>
-		<div class="navbar navbar-fixed-bottom">
-			<div class="row">
-				<div class="col-md-6 text-center col-md-offset-3">
-					<button class="btn btn-primary" id="turn_on">Turn On Lights</button>
-					<button class="btn btn-primary" id="play">Special Music for You!! Let's play</button>
-					<button class="btn btn-primary" id="bannar_coming">Let's do some decoration!!</button>
-					<button class="btn btn-primary" id="balloons_flying">Some Balloons!!</button>
-					<button class="btn btn-primary" id="cake_fadein">Special Cake for You</button>
-					<button class="btn btn-primary" id="light_candle">Light a Candle</button>
-					<button class="btn btn-primary" id="wish_message">Happy Birthday !!</button>
-					<button class="btn btn-primary" id="story">Message for You Buddy!!</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="effect.js"></script>
+<header>
+    <h1>The Official Utkarsh User Manual</h1>
+    <p>Version 2026.0 - High Performance Model</p>
+</header>
+
+<div class="container">
+    <h2>Performance Review: ★★★★★</h2>
+    <p>The subject continues to exceed expectations in the "Being Cute" and "Refusing to Ask for Directions" categories.</p>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>Spider Removal</h3>
+            <p>0% Success Rate<br><small>(Even the small ones)</small></p>
+        </div>
+        <div class="stat-card">
+            <h3>Joke Quality</h3>
+            <p>98% Dad Jokes<br><small>2% Actually Funny</small></p>
+        </div>
+        <div class="stat-card">
+            <h3>Selective Hearing</h3>
+            <p>Fully Operational<br><small>Optimized for bed time</small></p>
+        </div>
+        <div class="stat-card">
+            <h3>Cuddle Capacity</h3>
+            <p>Unlimited<br><small>Battery never dies</small></p>
+        </div>
+    </div>
+
+    <div class="love-note">
+        "To the man who knows exactly how I like my chai but still manages to leave his socks 2 inches away from the laundry basket—I love you more than chai"
+    </div>
+
+    <div class="prank-section">
+        <h3>Critical System Question:</h3>
+        <p style="font-size: 1.5rem; font-weight: bold;">Do you love me?</p>
+        <div class="btn-wrapper">
+            <button id="yesBtn" class="btn" onclick="celebrate()">YES</button>
+            <button id="noBtn" class="btn" onmouseover="moveButton()" onclick="moveButton()">NO</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Property of His Favorite Person. No Refunds. No Exchanges.
+</footer>
+
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-58229732-1', 'auto');
-  ga('send', 'pageview');
+    function moveButton() {
+        const btn = document.getElementById('noBtn');
+        // Random position logic
+        const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+        
+        btn.style.position = 'fixed';
+        btn.style.left = x + 'px';
+        btn.style.top = y + 'px';
+    }
+
+    function celebrate() {
+        alert("Correct choice, Boboo! ❤️ \n\nSystem reaching 100% happiness levels. \nNow come give your me a hug!");
+        document.querySelector('.prank-section h3').innerText = "System Status: Loved! 😍";
+        document.getElementById('noBtn').style.display = 'none';
+    }
 </script>
+
+</body>
 </html>
