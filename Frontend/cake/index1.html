@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message for Mom</title>
+    <style>
+        body {
+            font-family: 'Palatino', 'Georgia', serif;
+            background-color: #fff5f8;
+            margin: 0; padding: 0;
+            display: flex; justify-content: center; align-items: center;
+            height: 100vh; overflow: hidden;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(216, 27, 96, 0.1);
+            text-align: center;
+            border: 2px solid #fce4ec;
+            max-width: 450px;
+            position: relative;
+        }
+        h1 { color: #ad1457; font-size: 2rem; margin-bottom: 10px; }
+        p { color: #6a1b9a; font-size: 1.1rem; }
+        
+        .heart-meter {
+            background: #f3e5f5;
+            height: 20px; border-radius: 10px;
+            margin: 20px 0; overflow: hidden;
+        }
+        .heart-fill {
+            background: #e91e63; width: 0%; height: 100%;
+            transition: width 1s ease-in-out;
+        }
+
+        .btn-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            height: 60px;
+        }
+        .btn {
+            padding: 12px 30px;
+            border-radius: 25px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        #yesBtn { background-color: #e91e63; color: white; }
+        #noBtn {
+            background-color: #f8bbd0;
+            color: #ad1457;
+            position: relative;
+        }
+        
+        #celebration { display: none; }
+        .floating-heart {
+            position: fixed; color: #ff80ab;
+            pointer-events: none;
+            animation: floatUp 4s linear forwards;
+        }
+        @keyframes floatUp {
+            to { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body onload="fillMeter()">
+
+<div class="card" id="mainCard">
+    <div id="askSection">
+        <h1>For a Special Mom ❤️</h1>
+        <p>System Scanning for Love Levels...</p>
+        
+        <div class="heart-meter">
+            <div class="heart-fill" id="fill"></div>
+        </div>
+
+        <p id="question"><strong>Do you love Rakhi?</strong></p>
+        
+        <div class="btn-container">
+            <button id="yesBtn" class="btn" onclick="showLove()">YES!</button>
+            <button id="noBtn" class="btn" onmouseover="moveSoftly()">No</button>
+        </div>
+    </div>
+
+    <div id="celebration">
+        <h1 style="font-size: 3rem;">❤️</h1>
+        <h1>We Love You Too!</h1>
+        <p>You are the heart of this family.</p>
+        <button class="btn" id="yesBtn" onclick="location.reload()">Send Another Hug</button>
+    </div>
+</div>
+
+<script>
+    // Fills the heart meter automatically on load
+    function fillMeter() {
+        setTimeout(() => {
+            document.getElementById('fill').style.width = '100%';
+        }, 500);
+    }
+
+    // Gentle "shyness" for the No button
+    function moveSoftly() {
+        const btn = document.getElementById('noBtn');
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
+        
+        btn.style.position = 'fixed';
+        btn.style.left = x + 'px';
+        btn.style.top = y + 'px';
+        
+        // Change text to something sweet
+        const sweetTexts = ["Try again!", "Oops!", "Almost!", "Hehe"];
+        btn.innerText = sweetTexts[Math.floor(Math.random() * sweetTexts.length)];
+    }
+
+    function showLove() {
+        document.getElementById('askSection').style.display = 'none';
+        document.getElementById('celebration').style.display = 'block';
+        
+        // Start raining hearts
+        setInterval(() => {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.bottom = "-5vh";
+            heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+            document.body.appendChild(heart);
+        }, 200);
+    }
+</script>
+
+</body>
+</html>
