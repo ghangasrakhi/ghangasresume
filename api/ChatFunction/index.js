@@ -86,6 +86,22 @@ module.exports = async function (context, req) {
   }
 
   try {
+    // Simple test response first
+    context.res = {
+      status: 200,
+      body: {
+        message: "Chatbot is working! Environment variables need to be configured.",
+        sources: []
+      },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
+    };
+
+    /*
     // Initialize clients
     await initializeClients();
 
@@ -173,6 +189,7 @@ module.exports = async function (context, req) {
         "Access-Control-Allow-Headers": "Content-Type"
       }
     };
+    */
 
   } catch (error) {
     context.log("Error:", error);
