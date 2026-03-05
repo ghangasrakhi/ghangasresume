@@ -72,6 +72,19 @@ async function searchDocuments(query, topK = 3) {
 module.exports = async function (context, req) {
   context.log("Chat function processing request");
 
+  // Handle OPTIONS request for CORS preflight
+  if (req.method === "OPTIONS") {
+    context.res = {
+      status: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
+    };
+    return;
+  }
+
   try {
     // Initialize clients
     await initializeClients();
