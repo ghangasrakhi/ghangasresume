@@ -5,7 +5,6 @@
   "scripts": {
     "start": "func start",
     "test": "echo \"No tests yet...\"",
-    "build": "npm install",
     "upload-docs": "node upload-docs.js",
     "deploy": "node deploy.js"
   },
