@@ -273,6 +273,19 @@
 	<script src="js/lightbox.min.js"></script>
 	<script src="js/jquery.countdown.min.js"></script>
 	<script src="js/scripts.js"></script>
+	
+	<!-- Chatbot Widget -->
+	<script src="js/chatbot.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			ChatbotWidget.init({
+				apiUrl: 'https://your-api.azurewebsites.net/api/chat',
+				position: 'bottom-right',
+				title: 'Chat Assistant',
+				theme: 'light'
+			});
+		});
+	</script>
 </body>
 
 </html>

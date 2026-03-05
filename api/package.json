@@ -1,11 +1,19 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Azure Functions backend for AI chatbot",
   "scripts": {
     "start": "func start",
-    "test": "echo \"No tests yet...\""
+    "test": "echo \"No tests yet...\"",
+    "build": "npm install",
+    "upload-docs": "node upload-docs.js",
+    "deploy": "node deploy.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@azure/openai": "^1.0.0",
+    "@azure/search-documents": "^12.0.0",
+    "@azure/identity": "^4.0.0",
+    "dotenv": "^16.0.0"
+  },
   "devDependencies": {}
 }
